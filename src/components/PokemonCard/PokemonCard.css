@@ -1,0 +1,72 @@
+.card{
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+.card  > img.card-img-top{
+    width: 100px !important;
+    height: auto;
+    margin: 0 auto;
+}
+
+.loadingImage{
+    animation: loading 0.5s infinite;
+    -webkit-animation: loading 1s linear infinite;
+}
+
+
+@keyframes loading{
+    from{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
+to{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+}
+
+.pokemonIndex{
+    /* padding: 20px; */
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ef5350;
+    color: #ef5350;
+    position: absolute;
+    right: -20px;
+    background: #fff;
+    top: -20px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.pokemon{
+    text-decoration: none;
+}
+
+.card-title{
+    text-align: center;
+    color: #ef5350;
+
+}
+
+.jabName, .chineseName{
+    font-size: 20px;
+    color: #999;
+}
+
+.typeHolder{
+    margin: 20px 0;
+}
+
+
+.pokemonType{
+    margin-right: 10px;
+}
+

@@ -1,0 +1,18 @@
+.navbar-brand img{
+    width: 40px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.navbar-brand{
+    color: #fff !important;
+    text-decoration: none;
+}
+
+a.navbar-brand:hove{
+    color: #fff !important;
+}
+
+.bg-red{
+    background: #ef5350;
+}
