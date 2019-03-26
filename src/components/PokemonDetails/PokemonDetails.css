@@ -1,0 +1,28 @@
+.card.detailsCard{
+    padding-top: 0;
+    cursor: default;
+}
+
+.card img{
+    width: 100%;
+}
+
+
+.card.detailsCard:hover{
+    transform: scale(1)
+}
+
+.nameContainer , .profileDetails{
+    margin: 0 10px 20px;
+}
+
+
+
+.list-group-item.active{
+    background: #ef5350;
+    border-color:  #ef5350;
+}
+
+.nameContent{
+    padding: 20px 0;
+}

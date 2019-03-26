@@ -1,12 +1,25 @@
 .card{
     cursor: pointer;
     padding-top: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.2);
 }
 
 .card  > img.card-img-top{
     width: 100px !important;
     height: auto;
     margin: 0 auto;
+}
+
+a, 
+a:link,
+a:hover,
+a:visited
+{
+    text-decoration: none;
 }
 
 .loadingImage{
@@ -67,6 +80,6 @@ to{
 
 
 .pokemonType{
-    margin-right: 10px;
+    margin-right: 5px;
 }
 

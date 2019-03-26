@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import './PokemonCard.css'
+import logo from './logo.png'
 
 
 //color code for pokemon type
@@ -10,7 +12,7 @@ const TYPE_COLORS = {
   dragon: '755EDF',
   electric: 'FCBC17',
   fairy: 'F4B1F4',
-  fighting: '823551D',
+  fighting: '823551',
   fire: 'E73B0C',
   flying: 'A3B3F7',
   ghost: '6060B2',
@@ -51,14 +53,14 @@ export default class PokemonCard extends Component {
 
   render() {
     return (
-      <div className="col-md-3 col-sm-6 mb-5 ">
-        
-          <div className="card">
+      <div className="col-md-2 col-sm-12 mb-5 ">
+        <Link to={`pokemon/${this.state.id}`}>
+        <div className="card" >
             <div className=" pokemonIndex">
               <span className="badge"> {this.state.id} </span>
             </div>
             {
-              this.state.isImageLoading ? (<img src="logo.png" alt="" className="card-img-top d-block loadingImage" />) : null
+              this.state.isImageLoading ? (<img src={logo} alt="" className="card-img-top d-block loadingImage" />) : null
             }
               
             <img className="card-img-top" 
@@ -73,8 +75,9 @@ export default class PokemonCard extends Component {
                 <h5 className="card-title">{this.state.name.english}</h5>
                 <div className="typeHolder">
                   {
-                    this.state.pokemonType.map(type =>{
+                    this.state.pokemonType.map((type, index) =>{
                       return  <span 
+                              key={index}
                               className="badge pokemonType" 
                               style={{
                                     backgroundColor: `#${TYPE_COLORS[type.toLowerCase()]}`,
@@ -87,6 +90,7 @@ export default class PokemonCard extends Component {
                 </div>              
             </div>
           </div>  
+        </Link>
          
        </div>
     )
