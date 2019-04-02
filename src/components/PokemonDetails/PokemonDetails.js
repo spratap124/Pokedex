@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // list of all pokemon
 import pokedex from '../../pokedex.json'
 import './PokemonDetails.css'
+import logo from './logo.png'
 
 const pokemonList = JSON.parse(JSON.stringify(pokedex));
 
@@ -36,20 +37,22 @@ export default class PokemonDetails extends Component {
         imageURL : '',
         name:{},
         base:{},
-        type:[]
+        type:[],
+        isImageLoading:true
     }
 
-    componentDidMount(){
-        const id = this.props.match.params.id;
+    fetchDetails(id){
 
         //if id > 807 redirect to 404 page
-        if(id > 807){
-          return  this.props.history.push('/404')
+        if (id > 807) {
+            return this.props.history.push('/404')
         }
 
         const pokemon = pokemonList.find((el) => {
             return el.id == id;
         });
+
+        // console.log(pokemon);
 
         const type = pokemon.type;
         const name = pokemon.name;
@@ -64,6 +67,17 @@ export default class PokemonDetails extends Component {
             name,
             base
         })
+    }
+
+    componentDidMount(){
+        const id = this.props.match.params.id;
+        this.fetchDetails(id);
+        
+    }
+
+    componentWillReceiveProps(newProps){
+        const id = newProps.match.params.id;
+        this.fetchDetails(id);
     }
 
 
@@ -104,7 +118,15 @@ export default class PokemonDetails extends Component {
                     <div className="align-items-center" >
                         <div className="row">
                             <div className="col-md-6">
-                                <img src={this.state.imageURL} alt={this.state.pokemon.name} />
+                                    {
+                                        this.state.isImageLoading ? (<img src={logo} alt="" className="card-img-top d-block loadingImage" />) : null
+                                    }
+                                <img src={this.state.imageURL} alt={this.state.pokemon.name} 
+                                    onLoad={() => this.setState({ isImageLoading: false })}
+                                    style={
+                                        this.state.isImageLoading ? { display: 'none' } : { display: 'block' }
+                                    }
+                                />
                             </div>
                             <div className="col-md-6">  
                                 <div className="nameContainer">

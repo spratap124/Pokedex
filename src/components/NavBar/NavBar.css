@@ -16,3 +16,7 @@ a.navbar-brand:hove{
 .bg-red{
     background: #ef5350;
 }
+
+form{
+    position: relative;
+}

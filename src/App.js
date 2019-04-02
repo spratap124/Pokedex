@@ -25,7 +25,6 @@ class App extends Component {
           <Route  exact path="/404" component={Page404} />
         </Switch>
       </div>
-    
       </Router>
     );
   }
