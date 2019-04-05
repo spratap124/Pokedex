@@ -16,7 +16,7 @@ let  clickHander = (name) =>{
             <ul className="list-group">
                 {
                     props.suggestionsList.map((pokemon) => {
-                        return <Link to={`/pokemon/${pokemon.id}`}> <li className="list-group-item" onClick={clickHander(pokemon.name)} key={pokemon.id}>{pokemon.name}</li> </Link>
+                        return  <li className="list-group-item" onClick={clickHander(pokemon.name)} key={pokemon.id}><Link to={`/pokemon/${pokemon.id}`}>{pokemon.name}</Link></li> 
                             
                     })
                 }
