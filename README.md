@@ -15,4 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 # Screenshots:
 
 ![alt text](https://github.com/spratap124/Pokedex/blob/master/public/List.png)
+
+
+
 ![alt text](https://github.com/spratap124/Pokedex/blob/master/public/Details.png)
